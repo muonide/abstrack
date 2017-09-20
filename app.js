@@ -12,7 +12,7 @@ var app = express();
 
 const MongoClient = require('mongodb').MongoClient
 
-MongoClient.connect('mongodb://abstrack:upupaway@ds135234.mlab.com:35234/abstrack', (err, database) => {
+MongoClient.connect('', (err, database) => {
 	if (err) return console.log(err)
 	db = database
 
