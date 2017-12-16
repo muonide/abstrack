@@ -1,35 +1,27 @@
 var express = require('express');
-var app = express();
 var router = express.Router();
 
 router.get('/', function(req, res, next){
-  res.render('index', {title: 'Arkansas Balloon', home: true});
+  res.render('index', {title: 'Arkansas Balloon', page: 'home'});
 });
 
-router.get('/missions', function(req, res, next){
-  res.render('missions', {title: 'Missions'});
-});
+// using a seperate file for routes to handle actions specific to that route
+var missions = require('../routes/missions');
+router.use('/missions', missions);
 
+var missions = require('../routes/prediction');
+router.use('/prediction', missions);
 
-router.get('/prediction', function(req, res, next){
-  res.render('prediction', {title: 'Prediction'});
-});
-
+var missions = require('../routes/found');
+router.use('/found', missions);
 
 // router.get('/recovery', function(req, res, next){
 //   res.render('recovery');
 // });
 
-router.get('/found', function(req, res, next){
-  res.render('found');
-});
-
-
 // router.get('/about', function(req, res, next){
 //   res.render('about');
 // }); 
-
-
 
 // must be at the bottom, will take precedence over other views
 router.get('*', function(req, res){
