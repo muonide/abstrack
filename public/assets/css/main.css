@@ -8,10 +8,91 @@
 */
 
 /* ABStrack CSS*/
-.mission-image{
+.mission-image {
 	width: 236px;
 	height: 179px;
+	cursor: pointer;
 }
+
+header > .feature-text {
+	display: block;
+	font-size: 0.8rem;
+	height: 1;
+	margin: 0 0 1rem 0;
+	position: relative;
+}
+
+
+header.major > .feature-text {
+	font-size: 1rem;
+	margin: 0 0 1rem 0;
+}
+
+header.major > .feature-text:before, header.major > .feature-text:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	width: calc(50% - 6rem);
+	border-top: solid 2px;
+}
+
+header.major > .feature-text:before {
+	left: 0;
+}
+
+header.major > .feature-text:after {
+	right: 0;
+}
+
+header.major .feature-text:before, header.major .feature-text:after {
+	border-top-color: #eeeeee;
+}
+
+#main > .post.feature-mission > .image.main {
+	margin: 1rem 0;
+}
+
+#main > .post.feature-mission > .image.main > img.featured-image {
+	width: 55%;
+	margin: auto;
+}
+
+@media screen and (max-width: 736px) {
+	#main > .post.feature-mission > .image.main > img.featured-image {
+		width: 100%;
+		margin: auto;
+	}	
+}
+
+#main > .post.feature-mission header.major {
+	margin: 0 0 0.5rem 0;
+}
+
+#main > .post.feature-mission > .feature-mission-body{
+	position: relative;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+#main > .post.feature-mission header.major > h1, #main > .post.feature-mission header.major h2 {
+	font-size: 4rem;
+	line-height: 1.1;
+	margin: 0 0 0.5rem 0;
+}
+
+#main > .post.feature-mission header.major > h4, #main > .post.feature-mission header.major h4 {
+	font-size: 1.6rem;
+}
+
+@media screen and (max-width: 736px) {
+	#main > .post.feature-mission header.major > h1, #main > .post.feature-mission header.major h2 {
+		font-size: 2.5rem;
+		line-height: 1.2;
+		margin: 0;
+	}
+}
+
 
 /* Reset */
 

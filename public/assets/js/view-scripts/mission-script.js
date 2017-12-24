@@ -15,10 +15,18 @@
             });
         }
 
+        // possibly change to reflect screen size
+        var showingNavToggle = ($('#navPanelToggle').css('display') != 'none') ? true: false;
         
         $(".mission-image").on('click', function(){
+            
+            $('#footer').hide();
+            $('#copyright').hide();
+
+            if(showingNavToggle)
+                $('#navPanelToggle').fadeOut();
+
             var imageIndex = $(this).attr('data-index');
-            console.log(imageIndex + ' clicked');
             
             var options = {
                 index: parseInt(imageIndex, 10),
@@ -29,12 +37,12 @@
             var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
             gallery.init();
             
-            gallery.listen('close', function() { 
-                $('#navPanelToggle').fadeIn();
-            });
+            gallery.listen('close', function() {
+                $('#footer').show();
+                $('#copyright').show();
 
-            gallery.listen('initialZoomInEnd', function() {
-                $('#navPanelToggle').fadeOut();
+                if(showingNavToggle)
+                    $('#navPanelToggle').fadeIn();
             });
 
         });

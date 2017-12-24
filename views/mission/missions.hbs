@@ -1,29 +1,33 @@
-<!-- Post -->
-<section class="post">
-	<header class="major">
-		<span class="date">August 21, 2017</span>
-		<span class=""><h3>Featured Mission:</h3></span>
-		<h1>ABS-50<br />
-		Howl at the Moon</h1>
-		{{#if id}}
-		<h2>{{ id }}</h2>
-		{{/if}}
-		<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-		facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-		amet nullam sed etiam veroeros.</p>
-	</header>
-	<div class="image main"><img src="http://res.cloudinary.com/arballoonsat/image/upload/v1504696806/Arkansas_-_Best_Picture_ilq6oj.jpg" alt="" /></div>
-	<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
+{{#if featuredMission}}
+	<section class="post feature-mission">
+		<header class="major">
+			<span class="feature-text">Featured Mission</span>
+			<h2>{{featuredMission.title}}</h2>
+			<h4>{{featuredMission.subtitle}}</h4>
+		</header>
+		<div class="image main">
+			<img class="featured-image" src={{featuredMission.featuredImage}} alt="" />
+		</div>
+		<p>{{featuredMission.description}}</p>
+		<a href="missions?id={{featuredMission.id}}" class="button fit" data-id={{featuredMission.id}}>Full Story</a>
+	</section>
+{{/if}}
+<section class="posts">
+	{{#each missions as |mission|}}
+		<article>
+			<header>
+				<span class="date">{{mission.date}}</span>
+				<h2>{{mission.title}}
+				<br />{{mission.subtitle}}</h2>
+			</header>
+			<img class="image fit" src={{mission.featuredImage}} alt="" />
+			<p>{{mission.description}}</p>
+			<ul class="actions">
+				<li><a href="missions?id={{mission.id}}" class="button" data-id={{mission.id}}>Full Story</a></li>
+			</ul>
+		</article>
+	{{/each}}
 </section>
-<div class="row">
-	<div class="6u 12u$(small)">
-		<h3>Arkansas BalloonSAT Missions:</h3>
-		<ul>
-			<li><a href="abs50.html">ABS-50: Eclipse Ballooning Project</a></li>
-			<li><a href="abs49.html">ABS-49: Eclipse testing</a></li>
-			<li><a href="abs48.html">ABS-48: Video streaming test</a></li>
-			<li><a href="abs47.html">ABS-47: </a></li>
-		</ul>
-	</div>
-</div>
+{{!-- <div class="row">
+	<a href="#" class="button fit">Load More</a>
+</div> --}}

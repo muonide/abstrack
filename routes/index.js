@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next){
-  res.render('index', {title: 'Arkansas Balloon', page: 'home'});
+  res.render('index', {title: 'Arkansas Balloon', page: 'home' });
 });
 
 // using a seperate file for routes to handle actions specific to that route
