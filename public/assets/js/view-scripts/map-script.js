@@ -14,18 +14,9 @@ function initMap() { }
         // }
 
         // initMap();
-
-        // show  the predicted flight path of the balloon
-        // var flightCoords = [
-        //     {lat: 35.842335, lng: -90.6788892},
-        //     {lat: 38.365354, lng: -96.1356845},
-        //     {lat: 42.123569, lng: -100.1365694},
-        //     {lat: 48.456868, lng: -108.4689534},
-        //     {lat: 52.123548, lng: -115.1356864},
-        // ]
-
+        
         // var predictedPath = new google.maps.Polyline({
-        //     path: flightCoords,
+        //     path: [],
         //     geodesic: true,
         //     strokeColor: '#FF0000',
         //     strokeOpacity: 1.0,
@@ -34,7 +25,22 @@ function initMap() { }
 
         // predictedPath.setMap(map);
 
-        //update the map with the coordinates sent back from the balloon
+        // var getCoordsTimer = setInterval(function(){
+        //     var _this = this;
+        //     $.get('/prediction/liveupdate', function(data, status)
+        //     {
+        //         console.log("data:", data);
+        //         if(data != undefined || data != null)
+        //         {
+        //             var path = predictedPath.getPath();
+        //             path.push(new google.maps.LatLng(data.coords.lat, data.coords.lng));
+        //             predictedPath.setPath(path);
+        //         }else
+        //         {
+        //             clearInterval(_this);
+        //         }
+        //     });
+        // }, 2000);
 
     });
 
