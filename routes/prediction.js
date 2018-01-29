@@ -33,4 +33,12 @@ router.get('/liveupdate', function(req, res, next){
     res.send(balloon);
 });
 
+router.get('/liveupdate-graphs', function(req,res, next){
+    // generate random data for graph queries
+    data = {
+      alt: parseFloat((Math.random() * 820).toFixed(3)),
+      dp: parseFloat((Math.random() * 20).toFixed(3))
+    };
+    res.send(data);
+});
 module.exports = router;
