@@ -9,11 +9,14 @@ router.get('/', function(req, res, next){
 var missions = require('../routes/missions');
 router.use('/missions', missions);
 
-var missions = require('../routes/prediction');
-router.use('/prediction', missions);
+var prediction = require('../routes/prediction');
+router.use('/prediction', prediction);
 
-var missions = require('../routes/found');
-router.use('/found', missions);
+var found = require('../routes/found');
+router.use('/found', found);
+
+var about = require('../routes/about');
+router.use('/about', about);
 
 // router.get('/recovery', function(req, res, next){
 //   res.render('recovery');
