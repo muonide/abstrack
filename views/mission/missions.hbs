@@ -1,0 +1,33 @@
+{{#if featuredMission}}
+	<section class="post feature-mission">
+		<header class="major">
+			<span class="feature-text">Featured Mission</span>
+			<h2>{{featuredMission.title}}</h2>
+			<h4>{{featuredMission.subtitle}}</h4>
+		</header>
+		<div class="image main">
+			<img class="featured-image" src={{featuredMission.featuredImage}} alt="" />
+		</div>
+		<p>{{featuredMission.description}}</p>
+		<a href="missions?id={{featuredMission.id}}" class="button fit" data-id={{featuredMission.id}}>Full Story</a>
+	</section>
+{{/if}}
+<section class="posts">
+	{{#each missions as |mission|}}
+		<article>
+			<header>
+				<span class="date">{{mission.date}}</span>
+				<h2>{{mission.title}}
+				<br />{{mission.subtitle}}</h2>
+			</header>
+			<img class="image fit" src={{mission.featuredImage}} alt="" />
+			<p>{{mission.description}}</p>
+			<ul class="actions">
+				<li><a href="missions?id={{mission.id}}" class="button" data-id={{mission.id}}>Full Story</a></li>
+			</ul>
+		</article>
+	{{/each}}
+</section>
+{{!-- <div class="row">
+	<a href="#" class="button fit">Load More</a>
+</div> --}}

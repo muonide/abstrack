@@ -1,0 +1,29 @@
+
+<!-- Post -->
+
+<section class="post">
+	<header class="major">
+		<span class="date">{{mission.date}}</span>
+		<h1>{{mission.title}}</h1>
+		<p>{{mission.description}}</p>
+		<!--Add first image of mission-->
+		<div class="image main">
+			<img src={{mission.featuredImage}} alt="" />
+			</div>
+		<p>{{mission.body}}</p>
+	</header>
+</section>
+
+{{#if mission.images}}
+	<div class="row 50% uniform image-gallary">
+		{{#each mission.images as |image|}}
+			<div class="4u">
+				<span class="image fit">
+					<img class="mission-image" src={{image}} alt="" data-index={{@index}}>
+				</span>
+			</div>
+		{{/each}}
+	</div>
+
+	{{> photoswipe-display}}
+{{/if}}
